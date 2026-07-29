@@ -93,6 +93,7 @@ The source-of-truth Lovable usage rules live in `.lovable/rules.md`.
 
 When importing this repo into Lovable Design System, attach those rules and use these Storybook examples as the primary references:
 
+- `Checkout DLS/Cart Page/Exact Production Checkout Page`
 - `Checkout DLS/Cart Page/Production Cart Default`
 - `Checkout DLS/Cart Page/Production Cart With Coupon Error`
 - `Checkout DLS/Full Page Checkout/Desktop Default`
@@ -103,7 +104,7 @@ When importing this repo into Lovable Design System, attach those rules and use 
 
 Lovable-generated screens should use exported DLS components instead of raw cards, fields, buttons, payment rows, or summary rows.
 
-For a production checkout cart starter, prefer `Checkout DLS/Cart Page/Production Cart Default` as the first visual reference.
+For a production checkout cart starter, prefer `Checkout DLS/Cart Page/Exact Production Checkout Page` as the first visual reference.
 
 ## Visual Parity
 

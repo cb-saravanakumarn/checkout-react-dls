@@ -35,6 +35,7 @@ Do not create raw HTML replacements for DLS components. If a needed checkout pat
 
 Use these stories as canonical examples:
 
+- `Checkout DLS/Cart Page/Exact Production Checkout Page`
 - `Checkout DLS/Cart Page/Production Cart Default`
 - `Checkout DLS/Cart Page/Production Cart With Coupon Error`
 - `Checkout DLS/Full Page Checkout/Desktop Default`

@@ -83,6 +83,22 @@ export const ProductionCartDefault: Story = {
   ),
 };
 
+export const ExactProductionCheckoutPage: Story = {
+  render: () => (
+    <CheckoutPage
+      className="cb-checkout-page--cart cb-checkout-page--production-exact"
+      header={<CheckoutHeader title="Your cart" />}
+      main={<CartProducts />}
+      aside={
+        <>
+          <OrderSummary summary={cartSummary} />
+          <ChargebeeBranding />
+        </>
+      }
+    />
+  ),
+};
+
 export const ProductionCartWithCouponError: Story = {
   render: () => (
     <CheckoutPage

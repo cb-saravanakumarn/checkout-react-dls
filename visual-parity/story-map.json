@@ -1,0 +1,31 @@
+{
+  "stories": [
+    {
+      "id": "order-summary-default",
+      "title": "Order Summary / Default",
+      "original": {
+        "url": "http://localhost:6006/iframe.html?id=component-full-page-summarysection--default",
+        "rootSelector": ".g-order-summary"
+      },
+      "candidate": {
+        "url": "http://127.0.0.1:6016/iframe.html?id=checkout-dls-order-summary--default&viewMode=story",
+        "rootSelector": "#storybook-root .cb-order-summary"
+      },
+      "styleSelectors": {
+        "root": [".g-order-summary", ".cb-order-summary"],
+        "heading": [".g-summary-heading", ".cb-order-summary__heading"],
+        "lineItems": [".g-summary__ul", ".cb-summary-line-items"],
+        "subtotal": [".g-summary__subtotal", ".cb-summary-row--semibold"],
+        "coupon": [".g-apply-coupon-link a", ".cb-order-summary__coupon a"],
+        "total": [".g-summary__total", ".cb-summary-row--total"],
+        "futureCharges": [".g-summary__next-charge-btn a", ".cb-order-summary__future-charges a"],
+        "submit": ["#submit-btn", ".cb-submit-section .cb-checkout-button"]
+      },
+      "thresholds": {
+        "maxMismatchRatio": 0.005,
+        "maxRootWidthDelta": 1,
+        "maxRootHeightDelta": 2
+      }
+    }
+  ]
+}

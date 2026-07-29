@@ -1,0 +1,110 @@
+.cb-notification {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.875rem 1rem;
+  border: var(--cb-checkout-border-width) solid var(--cb-checkout-border);
+  border-radius: var(--cb-checkout-radius-md);
+  background: var(--cb-checkout-neutral-50);
+  color: var(--cb-checkout-text-primary);
+}
+
+.cb-notification--primary {
+  border-color: var(--cb-checkout-primary-200);
+  background: var(--cb-checkout-primary-50);
+}
+
+.cb-notification--success {
+  border-color: var(--cb-checkout-green-500);
+  background: #ecfadc;
+}
+
+.cb-notification--warning {
+  border-color: var(--cb-checkout-yellow-500);
+  background: #fff5d9;
+}
+
+.cb-notification--error {
+  border-color: var(--cb-checkout-red-600);
+  background: #ffebeb;
+}
+
+.cb-notification__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  background: currentColor;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 700;
+  flex: 0 0 auto;
+}
+
+.cb-notification__title {
+  font-weight: 600;
+}
+
+.cb-notification__body {
+  color: var(--cb-checkout-text-tertiary);
+}
+
+.cb-modal-shell {
+  position: relative;
+  min-height: 24rem;
+}
+
+.cb-modal-shell__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 0.4);
+}
+
+.cb-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: min(28rem, calc(100% - 2rem));
+  gap: 1rem;
+  padding: 1.25rem;
+  transform: translate(-50%, -50%);
+  border-radius: var(--cb-checkout-radius-card);
+  background: var(--cb-checkout-card-bg);
+  color: var(--cb-checkout-text-primary);
+  box-shadow: 0 16px 44px rgb(0 0 0 / 0.18);
+}
+
+.cb-modal__header {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.cb-modal__title {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+.cb-modal__close {
+  border: 0;
+  background: transparent;
+  color: var(--cb-checkout-text-tertiary);
+  cursor: pointer;
+  font-size: 1.25rem;
+}
+
+.cb-modal__description,
+.cb-modal__content {
+  color: var(--cb-checkout-text-tertiary);
+}
+
+.cb-modal__footer {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+}

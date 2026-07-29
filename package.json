@@ -1,0 +1,49 @@
+{
+  "name": "@chargebee/checkout-react-dls",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Static React DLS for Lovable full-page checkout prototyping.",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./styles.css": "./dist/styles.css"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "storybook dev -p 6011",
+    "build": "tsc -p tsconfig.build.json && vite build",
+    "build:storybook": "storybook build",
+    "visual-parity": "node scripts/visual-parity.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^8.4.7",
+    "@storybook/react-vite": "^8.4.7",
+    "@vitejs/plugin-react": "^4.3.4",
+    "pixelmatch": "7.2.0",
+    "playwright": "1.62.0",
+    "pngjs": "7.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "storybook": "^8.4.7",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11",
+    "vite-plugin-dts": "^4.4.0"
+  }
+}

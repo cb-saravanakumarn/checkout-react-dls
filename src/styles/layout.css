@@ -1,0 +1,122 @@
+.cb-checkout-page {
+  min-height: 100vh;
+  padding: 2rem;
+  background: var(--cb-checkout-page-bg);
+}
+
+.cb-checkout-page__content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 2rem minmax(20rem, 24rem);
+  align-items: start;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.cb-checkout-page__main {
+  display: grid;
+  gap: 1rem;
+}
+
+.cb-checkout-page__aside {
+  position: sticky;
+  top: 1.5rem;
+}
+
+.cb-checkout-page__mobile-submit {
+  display: none;
+}
+
+.cb-checkout-header {
+  max-width: 72rem;
+  margin: 0 auto 1.25rem;
+}
+
+.cb-checkout-header__title {
+  margin: 0;
+  color: var(--cb-checkout-text-primary);
+  font-size: 1.266rem;
+  line-height: 1.645rem;
+  font-weight: 700;
+}
+
+.cb-checkout-header__subtitle {
+  margin: 0.25rem 0 0;
+  color: var(--cb-checkout-text-tertiary);
+  font-size: 0.875rem;
+}
+
+.cb-checkout-section {
+  padding: 1.5rem;
+  border: var(--cb-checkout-border-width) solid var(--cb-checkout-border);
+  border-radius: var(--cb-checkout-radius-card);
+  box-shadow: var(--cb-checkout-shadow-section);
+  background: var(--cb-checkout-card-bg);
+  color: var(--cb-checkout-text-primary);
+}
+
+.cb-checkout-section__title {
+  margin: 0 0 1rem;
+  font-size: 1.266rem;
+  line-height: 1.645rem;
+  font-weight: 600;
+}
+
+.cb-checkout-section__content {
+  display: grid;
+  gap: 1rem;
+}
+
+.cb-checkout-form-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.cb-checkout-form-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 767px) {
+  .cb-checkout-page {
+    padding: 1rem;
+    padding-bottom: 6rem;
+  }
+
+  .cb-checkout-page__content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cb-checkout-page__gutter {
+    display: none;
+  }
+
+  .cb-checkout-page__aside {
+    position: static;
+  }
+
+  .cb-checkout-page__mobile-submit {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    display: block;
+    padding: 0.75rem 1rem;
+    border-top: var(--cb-checkout-border-width) solid var(--cb-checkout-divider);
+    background: var(--cb-checkout-card-bg);
+    box-shadow: 0 -4px 18px rgb(0 0 0 / 0.08);
+  }
+
+  .cb-checkout-form-grid--two {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-checkout-section {
+    padding: 1rem 0;
+    border-width: 0;
+    border-radius: 0;
+    box-shadow: none;
+    border-bottom: var(--cb-checkout-border-width) solid var(--cb-checkout-divider);
+  }
+}

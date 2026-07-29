@@ -206,6 +206,49 @@
   gap: 0.5rem;
 }
 
+.cb-cart-page__remove,
+.cb-cart-page__coupon-link,
+.cb-cart-page__next-charge button {
+  width: max-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cb-checkout-link-color);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cb-cart-page__coupon-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: end;
+  width: 100%;
+}
+
+.cb-cart-page__next-charge {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  font-size: var(--cb-checkout-body-font-size);
+  line-height: var(--cb-checkout-body-line-height);
+}
+
+.cb-cart-page__next-charge span,
+.cb-cart-page__next-charge button {
+  grid-column: 1 / span 2;
+}
+
+.cb-cart-page__next-charge strong {
+  grid-column: 3;
+  color: var(--cb-checkout-text-secondary);
+  font-weight: 600;
+  text-align: right;
+}
+
 @media (max-width: 767px) {
   .cb-order-summary {
     padding: 1rem;

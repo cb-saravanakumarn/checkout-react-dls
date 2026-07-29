@@ -50,6 +50,14 @@
   overflow-wrap: break-word;
 }
 
+.cb-product-card--compact {
+  padding: 1rem;
+}
+
+.cb-product-card--simple {
+  min-height: 7.3125rem;
+}
+
 .cb-product-card--with-image {
   grid-template-columns: 6.25rem minmax(0, 1fr);
 }
@@ -106,6 +114,10 @@
   gap: 0.5rem;
   align-items: flex-start;
   justify-content: space-between;
+  margin-top: 0.25rem;
+}
+
+.cb-product-card--simple .cb-product-card__row {
   margin-top: 0.25rem;
 }
 

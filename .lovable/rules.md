@@ -20,6 +20,7 @@ Place components like this:
 - Put customer, billing, shipping, tax, cart, payment, gift, and notes content in `CheckoutSection`.
 - Put related form controls inside `CheckoutFormGrid`.
 - Put plan, addon, and charge rows inside `ProductList`.
+- For the production cart starter page, use `ProductList` directly as the main content and `OrderSummary` in the aside.
 - Put the desktop summary in the `CheckoutPage` `aside` prop.
 - Put mobile-only fixed submit UI in the `CheckoutPage` `mobileSubmit` prop.
 - Put coupon, tax, discount, consent, agreement, future-charge, and submit elements inside or immediately below `OrderSummary`.
@@ -34,6 +35,8 @@ Do not create raw HTML replacements for DLS components. If a needed checkout pat
 
 Use these stories as canonical examples:
 
+- `Checkout DLS/Cart Page/Production Cart Default`
+- `Checkout DLS/Cart Page/Production Cart With Coupon Error`
 - `Checkout DLS/Full Page Checkout/Desktop Default`
 - `Checkout DLS/Full Page Checkout/Mobile Default`
 - `Checkout DLS/Order Summary/Default`

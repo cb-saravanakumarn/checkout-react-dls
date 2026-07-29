@@ -17,6 +17,7 @@ export * from './components/layout/CheckoutPage';
 export * from './components/layout/CheckoutHeader';
 export * from './components/layout/CheckoutSection';
 export * from './components/layout/CheckoutFormGrid';
+export * from './components/layout/ChargebeeBranding';
 export * from './components/product/ProductCard';
 export * from './components/product/ProductList';
 export * from './components/product/QuantityControl';

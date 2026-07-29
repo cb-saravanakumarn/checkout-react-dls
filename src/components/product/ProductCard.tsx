@@ -9,17 +9,21 @@ export interface ProductCardProps {
   action?: ReactNode;
   loading?: boolean;
   recommended?: boolean;
+  density?: 'default' | 'compact';
   className?: string;
 }
 
-export function ProductCard({ product, quantityControl, action, loading, recommended, className }: ProductCardProps) {
+export function ProductCard({ product, quantityControl, action, loading, recommended, density = 'default', className }: ProductCardProps) {
   const tag = product.tag ?? (product.kind === 'plan' ? 'Plan' : product.kind === 'addon' ? 'Addon' : 'Charge');
+  const quantity = quantityControl ?? (product.quantity ? <QuantityControl value={product.quantity} invalid={Boolean(product.errorMessage)} errorMessage={product.errorMessage} /> : null);
   return (
     <section
       className={cx(
         'cb-product-card',
         `cb-product-card--${product.kind}`,
+        `cb-product-card--${density}`,
         product.imageUrl && 'cb-product-card--with-image',
+        !product.description && !product.metered && !quantity && 'cb-product-card--simple',
         recommended && 'cb-product-card--recommended',
         loading && 'cb-product-card--loading',
         className,
@@ -37,9 +41,7 @@ export function ProductCard({ product, quantityControl, action, loading, recomme
         {product.description && <div className="cb-product-card__description">{product.description}</div>}
         {product.metered && <div className="cb-product-card__metered">Usage based billing</div>}
         <div className="cb-product-card__row">
-          <div className="cb-product-card__quantity">
-            {quantityControl ?? (product.quantity ? <QuantityControl value={product.quantity} invalid={Boolean(product.errorMessage)} errorMessage={product.errorMessage} /> : null)}
-          </div>
+          <div className="cb-product-card__quantity">{quantity}</div>
           <div className="cb-product-card__price">
             {loading ? <span className="cb-checkout-skeleton" /> : product.price}
             {product.billingFrequency && <span className="cb-product-card__frequency">/{product.billingFrequency}</span>}

@@ -143,11 +143,58 @@
   gap: 0.5rem;
 }
 
-.cb-apply-coupon__field {
+.cb-apply-coupon__heading {
+  color: var(--cb-checkout-text-primary);
+  font-size: var(--cb-checkout-body-font-size);
+  line-height: var(--cb-checkout-body-line-height);
+  font-weight: 600;
+}
+
+.cb-apply-coupon__main {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem;
-  align-items: end;
+  gap: 0.5rem;
+}
+
+.cb-coupon-input-group {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.cb-apply-coupon__input .cb-checkout-field__input {
+  padding: 0.62rem 4.75rem 0.62rem 0.75rem;
+}
+
+.cb-coupon-link {
+  position: absolute;
+  right: 0.75rem;
+  text-align: right;
+  z-index: 2;
+}
+
+.cb-coupon-apply-link {
+  top: 25%;
+}
+
+.cb-coupon-error-link {
+  top: 12%;
+}
+
+.cb-apply-coupon__action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cb-checkout-link-color);
+  font: inherit;
+  font-weight: 600;
+  line-height: var(--cb-checkout-body-line-height);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cb-apply-coupon__action:disabled {
+  color: var(--cb-checkout-disabled-text);
+  cursor: default;
 }
 
 .cb-apply-coupon__applied {
@@ -206,8 +253,29 @@
   gap: 0.5rem;
 }
 
-.cb-cart-page__remove,
-.cb-cart-page__coupon-link,
+.cb-future-charges {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+  width: 100%;
+  font-size: var(--cb-checkout-body-font-size);
+  line-height: var(--cb-checkout-body-line-height);
+}
+
+.cb-future-charges__copy {
+  grid-column: 1 / span 2;
+  display: grid;
+  gap: 0.125rem;
+}
+
+.cb-future-charges strong {
+  grid-column: 3;
+  color: var(--cb-checkout-text-secondary);
+  font-weight: 600;
+  text-align: right;
+}
+
+.cb-future-charges button,
 .cb-cart-page__next-charge button {
   width: max-content;
   padding: 0;
@@ -220,11 +288,29 @@
   cursor: pointer;
 }
 
-.cb-cart-page__coupon-form {
+.cb-future-charges-modal {
+  width: min(31rem, calc(100% - 2rem));
+}
+
+.cb-future-charges-modal__section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 0.75rem;
-  align-items: end;
+  gap: 0.5rem;
+}
+
+.cb-cart-page__remove,
+.cb-cart-page__coupon-link {
+  width: max-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cb-checkout-link-color);
+  font: inherit;
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.cb-cart-page__coupon-form {
   width: 100%;
 }
 

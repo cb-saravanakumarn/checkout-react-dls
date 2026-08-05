@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { CheckoutInput } from '../fields/CheckoutInput';
-import { CheckoutButton } from '../primitives/CheckoutButton';
 
 export interface AppliedCoupon {
   code: string;
@@ -19,8 +18,8 @@ export interface ApplyCouponProps {
 }
 
 export function ApplyCoupon({
-  label = 'Coupon code',
-  placeholder = 'Enter coupon code',
+  label = 'Enter coupon code',
+  placeholder,
   value,
   appliedCoupons = [],
   errorMessage,
@@ -30,11 +29,21 @@ export function ApplyCoupon({
 }: ApplyCouponProps) {
   return (
     <div className="cb-apply-coupon">
-      <div className="cb-apply-coupon__field">
-        <CheckoutInput label={label} placeholder={placeholder} defaultValue={value} invalid={Boolean(errorMessage)} errorMessage={errorMessage} />
-        <CheckoutButton variant="link" loading={loading} widthMax>
-          {actionLabel}
-        </CheckoutButton>
+      <div className="cb-apply-coupon__heading">{label}</div>
+      <div className="cb-apply-coupon__main cb-coupon-input-group">
+        <CheckoutInput
+          className="cb-apply-coupon__input"
+          placeholder={placeholder}
+          defaultValue={value}
+          invalid={Boolean(errorMessage)}
+          errorMessage={errorMessage}
+        />
+        <div className={errorMessage ? 'cb-coupon-link cb-coupon-error-link' : 'cb-coupon-link cb-coupon-apply-link'}>
+          <button type="button" className="cb-apply-coupon__action" disabled={loading}>
+            {actionLabel}
+          </button>
+          {loading && <span className="cb-loader" aria-label="Applying coupon" />}
+        </div>
       </div>
       {appliedCoupons.length > 0 && (
         <div className="cb-apply-coupon__applied">

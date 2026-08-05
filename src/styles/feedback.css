@@ -52,18 +52,19 @@
 }
 
 .cb-modal-shell {
-  position: relative;
-  min-height: 24rem;
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
 }
 
 .cb-modal-shell__overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgb(0 0 0 / 0.4);
 }
 
 .cb-modal {
-  position: absolute;
+  position: fixed;
   top: 50%;
   left: 50%;
   display: grid;

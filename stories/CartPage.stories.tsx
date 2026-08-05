@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import {
+  ApplyCoupon,
   ChargebeeBranding,
-  CheckoutButton,
   CheckoutHeader,
-  CheckoutInput,
   CheckoutPage,
+  FutureCharges,
   OrderSummary,
   ProductCard,
   ProductList,
@@ -42,15 +42,28 @@ const cartSummary: OrderSummaryData = {
   rows: [{ id: 'subtotal', label: 'Subtotal (5 items)', value: '₹327.00', emphasis: 'semibold' }],
   coupon: <button className="cb-cart-page__coupon-link">Apply coupon</button>,
   amountDue: { id: 'total', label: 'Total', value: '₹327.00', emphasis: 'total' },
-  futureCharges: (
-    <div className="cb-cart-page__next-charge">
-      <span>Next charge on May 13, 2026</span>
-      <button>Future charges</button>
-      <strong>₹228.00</strong>
-    </div>
-  ),
+  futureCharges: <CartFutureCharges />,
   submitLabel: 'Proceed To Checkout',
 };
+
+const futureChargeItems = [
+  { id: 'pro-plan', label: 'Pro Plan', detail: '₹149.00 / month', amount: '₹149.00' },
+  { id: 'analytics-pro', label: 'Analytics Pro', detail: '₹50.00 / month', amount: '₹50.00' },
+  { id: 'priority-support', label: 'Priority Support', detail: '₹29.00 / month', amount: '₹29.00' },
+];
+
+function CartFutureCharges() {
+  return (
+    <FutureCharges
+      nextChargeLabel="Next charge on May 13, 2026"
+      nextChargeAmount="₹228.00"
+      items={futureChargeItems}
+      subtotal="₹228.00"
+      total="₹228.00"
+      totalDate="On May 13, 2026"
+    />
+  );
+}
 
 function RemoveAction() {
   return <button className="cb-cart-page__remove">Remove</button>;
@@ -70,7 +83,7 @@ function CartProducts() {
 export const ProductionCartDefault: Story = {
   render: () => (
     <CheckoutPage
-      className="cb-checkout-page--cart"
+      className="cb-checkout-page--cart cb-checkout-page--production-exact cb-checkout-page--production-cart-layout"
       header={<CheckoutHeader title="Your cart" />}
       main={<CartProducts />}
       aside={
@@ -86,7 +99,7 @@ export const ProductionCartDefault: Story = {
 export const ExactProductionCheckoutPage: Story = {
   render: () => (
     <CheckoutPage
-      className="cb-checkout-page--cart cb-checkout-page--production-exact"
+      className="cb-checkout-page--cart cb-checkout-page--production-exact cb-checkout-page--production-cart-layout"
       header={<CheckoutHeader title="Your cart" />}
       main={<CartProducts />}
       aside={
@@ -102,7 +115,7 @@ export const ExactProductionCheckoutPage: Story = {
 export const ProductionCartWithCouponError: Story = {
   render: () => (
     <CheckoutPage
-      className="cb-checkout-page--cart"
+      className="cb-checkout-page--cart cb-checkout-page--production-exact cb-checkout-page--production-cart-layout"
       header={<CheckoutHeader title="Your cart" />}
       main={<CartProducts />}
       aside={
@@ -112,8 +125,7 @@ export const ProductionCartWithCouponError: Story = {
               ...cartSummary,
               coupon: (
                 <div className="cb-cart-page__coupon-form">
-                  <CheckoutInput label="Enter coupon code" value="dsada" readOnly invalid errorMessage="Invalid coupon code" />
-                  <CheckoutButton variant="link">Apply</CheckoutButton>
+                  <ApplyCoupon value="dsada" errorMessage="Invalid coupon code" />
                 </div>
               ),
             }}

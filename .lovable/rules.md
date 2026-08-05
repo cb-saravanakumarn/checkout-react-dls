@@ -35,6 +35,9 @@ Do not create raw HTML replacements for DLS components. If a needed checkout pat
 
 Use these stories as canonical examples:
 
+- `Example Pages/Full Page Checkout/Configurable Production Preview`
+- `Example Pages/Full Page Checkout/Coupon Error And Future Charges`
+- `Example Pages/Full Page Checkout/Trial Without Payment Details`
 - `Checkout DLS/Cart Page/Exact Production Checkout Page`
 - `Checkout DLS/Cart Page/Production Cart Default`
 - `Checkout DLS/Cart Page/Production Cart With Coupon Error`
@@ -43,3 +46,7 @@ Use these stories as canonical examples:
 - `Checkout DLS/Order Summary/Default`
 - `Checkout DLS/Product Card/Plan Card`
 - `Checkout DLS/Payment Methods/Card Selected`
+
+For new full-page checkout starter screens, begin with `Example Pages/Full Page Checkout/Configurable Production Preview`.
+
+Use the settings drawer in that story as the feature map for prompt-based changes. When a user asks to enable, disable, or preview checkout configuration, update the matching setting instead of rebuilding the UI from scratch. The complete feature map is documented in `docs/lovable-feature-map.md`.

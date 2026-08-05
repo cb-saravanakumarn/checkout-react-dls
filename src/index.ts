@@ -38,3 +38,4 @@ export * from './components/payment/CardPaymentForm';
 export * from './components/payment/OfflinePayment';
 export * from './components/payment/PaymentConsentModal';
 export * from './components/auth/LoginPanel';
+export * from './components/examples/FullPageCheckoutStarter';

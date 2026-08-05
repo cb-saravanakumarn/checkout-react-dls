@@ -1,6 +1,15 @@
 # Lovable Full Page Checkout Feature Map
 
-Use `Example Pages/Full Page Checkout/Configurable Production Preview` as the starter page for Lovable-generated checkout prototypes.
+Use `FullPageCheckoutStarter` as the starter component for Lovable-generated checkout prototypes. Use `Example Pages/Full Page Checkout/Configurable Production Preview` as the visual Storybook reference for that exported component.
+
+```tsx
+import '@chargebee/checkout-react-dls/styles.css';
+import { FullPageCheckoutStarter, defaultFullPageCheckoutConfig } from '@chargebee/checkout-react-dls';
+
+export default function App() {
+  return <FullPageCheckoutStarter config={defaultFullPageCheckoutConfig} />;
+}
+```
 
 The story includes a settings button in the top-right corner. Opening it shows a right drawer with production checkout settings that can be toggled live. These settings are the promptable feature names Lovable should preserve instead of creating alternate UI patterns.
 
@@ -62,8 +71,9 @@ Ask Lovable to modify the config, then keep the DLS components intact:
 
 ```text
 Use the Checkout React DLS full-page checkout starter.
+Import and render FullPageCheckoutStarter.
 Set allowCoupons=true, couponState=error, showFutureCharges=true, collectShippingAddress=false, and skipPaymentDetails=false.
 Do not replace DLS components with raw cards, custom inputs, or default Radix/shadcn components.
 ```
 
-When a requested checkout behavior is not represented by a setting above, add it to the starter config and drawer first, then update the page composition with existing DLS components.
+When a requested checkout behavior is not represented by a setting above, add it to `FullPageCheckoutStarterConfig` and `CheckoutSettingsDrawer` first, then update the page composition with existing DLS components.

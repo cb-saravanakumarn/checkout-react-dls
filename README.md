@@ -30,6 +30,25 @@ import '@chargebee/checkout-react-dls/styles.css';
 import { CheckoutPage, CheckoutHeader, OrderSummary, demoSummary } from '@chargebee/checkout-react-dls';
 ```
 
+For Lovable starter templates, prefer the exported full-page starter instead of composing the checkout from scratch:
+
+```tsx
+import '@chargebee/checkout-react-dls/styles.css';
+import { FullPageCheckoutStarter, defaultFullPageCheckoutConfig } from '@chargebee/checkout-react-dls';
+
+export default function App() {
+  return (
+    <FullPageCheckoutStarter
+      config={{
+        ...defaultFullPageCheckoutConfig,
+        allowCoupons: true,
+        showFutureCharges: true,
+      }}
+    />
+  );
+}
+```
+
 ## Page Anatomy
 
 Use the DLS as a checkout page composition system, not as a generic landing-page kit.
@@ -105,7 +124,7 @@ When importing this repo into Lovable Design System, attach those rules and use 
 
 Lovable-generated screens should use exported DLS components instead of raw cards, fields, buttons, payment rows, or summary rows.
 
-For promptable checkout configuration, use `docs/lovable-feature-map.md` and the settings drawer in `Example Pages/Full Page Checkout/Configurable Production Preview`.
+For promptable checkout configuration, use `FullPageCheckoutStarter`, `defaultFullPageCheckoutConfig`, `docs/lovable-feature-map.md`, and the settings drawer in `Example Pages/Full Page Checkout/Configurable Production Preview`.
 
 For a production checkout cart starter, prefer `Checkout DLS/Cart Page/Exact Production Checkout Page` as the first visual reference.
 

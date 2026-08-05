@@ -4,8 +4,12 @@ Always use the exported checkout React DLS components when generating full-page 
 
 Do not create a marketing page, hero section, pricing page, or decorative landing page. The first screen should be the usable checkout UI.
 
+For full-page checkout starter templates, prefer the exported `FullPageCheckoutStarter` component with `defaultFullPageCheckoutConfig`. Use the lower-level DLS components only when a screen needs a focused custom composition.
+
 Use:
 
+- `FullPageCheckoutStarter` for the default Lovable checkout starter.
+- `CheckoutSettingsDrawer` when the starter needs visible enable/disable controls.
 - `CheckoutPage` for the shell.
 - `CheckoutHeader` for the page heading.
 - `CheckoutSection` for checkout form groups.
@@ -49,4 +53,4 @@ Use these stories as canonical examples:
 
 For new full-page checkout starter screens, begin with `Example Pages/Full Page Checkout/Configurable Production Preview`.
 
-Use the settings drawer in that story as the feature map for prompt-based changes. When a user asks to enable, disable, or preview checkout configuration, update the matching setting instead of rebuilding the UI from scratch. The complete feature map is documented in `docs/lovable-feature-map.md`.
+Use `FullPageCheckoutStarter` and the settings drawer in that story as the feature map for prompt-based changes. When a user asks to enable, disable, or preview checkout configuration, update the matching `defaultFullPageCheckoutConfig` setting instead of rebuilding the UI from scratch. The complete feature map is documented in `docs/lovable-feature-map.md`.
